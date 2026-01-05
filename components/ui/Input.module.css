@@ -1,0 +1,54 @@
+/* Input Component Styles */
+.inputContainer {
+  width: 100%;
+}
+
+.inputLabel {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.inputDefault {
+  border-color: #d1d5db;
+}
+
+.inputError {
+  border-color: #ef4444;
+}
+
+.inputErrorText {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #dc2626;
+}
+
+/* Input States */
+.inputFocus {
+  border-color: #3b82f6;
+}
+
+.input:focus.inputFocus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.inputDisabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+  opacity: 0.6;
+}

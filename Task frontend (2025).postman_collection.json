@@ -1,0 +1,520 @@
+{
+	"info": {
+		"_postman_id": "7061fe16-2bf2-4faf-8dc0-a75a27e40503",
+		"name": "Task frontend (2025)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43238859",
+		"_collection_link": "https://trendline-6101.postman.co/workspace/Trendline~1760d819-08e1-4e1b-8bdd-0363edf7cc76/collection/43238859-7061fe16-2bf2-4faf-8dc0-a75a27e40503?action=share&source=collection_link&creator=43238859"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Verify",
+					"item": [
+						{
+							"name": "Verify  Account",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "code",
+											"value": "123455",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/verify-email",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"verify-email"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Resend Code Verify account",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/verify-email/resend-code",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"verify-email",
+										"resend-code"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Test Account",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "testaccount@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "0501231100",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789##AAa",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456789##AAa",
+									"type": "text"
+								},
+								{
+									"key": "mobile_country_code",
+									"value": "971",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Test Account",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "mahmoudhasan509@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "0501234578",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789##AAa",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "123456789##AAa",
+											"type": "text"
+										},
+										{
+											"key": "mobile_country_code",
+											"value": "971",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "client",
+											"description": "restaurant, client",
+											"type": "text"
+										},
+										{
+											"key": "fcm_token",
+											"value": "test",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/register",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 08:59:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"status_code\": 200,\n    \"data\": {\n        \"id\": 2,\n        \"type\": \"client\",\n        \"name\": \"Test Account\",\n        \"email\": \"mahmoudhasan509@gmail.com\",\n        \"mobile_country_code\": \"971\",\n        \"mobile\": \"501234578\",\n        \"image\": \"https://skipapp.ae/default-images/profile.png\",\n        \"email_verified_at\": false,\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3NraXBhcHAuYWUvYXBpL2F1dGgvcmVnaXN0ZXIiLCJpYXQiOjE3NTEzNjAzNzgsImV4cCI6MTc1MTk2NTE3OCwibmJmIjoxNzUxMzYwMzc4LCJqdGkiOiJlVFUwamRXQmoxS2ROb2h5Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.7q-j8-WPxt_RqYb1zv1Gp9dlSlQjzU0gzFgkSGZ4RXA\",\n        \"is_complete\": false,\n        \"is_approved\": false,\n        \"status_docs\": \"not_completed\",\n        \"documents\": {\n            \"restaurant_info_document\": null,\n            \"restaurant_services_document\": null,\n            \"working_hour_document\": {\n                \"days\": [\n                    {\n                        \"id\": 1,\n                        \"day\": \"saturday\",\n                        \"is_open\": false,\n                        \"start_time\": null,\n                        \"end_time\": null\n                    },\n                    {\n                        \"id\": 2,\n                        \"day\": \"sunday\",\n                        \"is_open\": false,\n                        \"start_time\": null,\n                        \"end_time\": null\n                    },\n                    {\n                        \"id\": 3,\n                        \"day\": \"monday\",\n                        \"is_open\": false,\n                        \"start_time\": null,\n                        \"end_time\": null\n                    },\n                    {\n                        \"id\": 4,\n                        \"day\": \"tuesday\",\n                        \"is_open\": false,\n                        \"start_time\": null,\n                        \"end_time\": null\n                    },\n                    {\n                        \"id\": 5,\n                        \"day\": \"wednesday\",\n                        \"is_open\": false,\n                        \"start_time\": null,\n                        \"end_time\": null\n                    },\n                    {\n                        \"id\": 6,\n                        \"day\": \"thursday\",\n                        \"is_open\": false,\n                        \"start_time\": null,\n                        \"end_time\": null\n                    },\n                    {\n                        \"id\": 7,\n                        \"day\": \"friday\",\n                        \"is_open\": false,\n                        \"start_time\": null,\n                        \"end_time\": null\n                    }\n                ],\n                \"status\": \"pending\",\n                \"latest_status_note\": null\n            }\n        }\n    },\n    \"message\": \"تم إنشاء الحساب بنجاح\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/user-data",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"user-data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "client1@test.com",
+									"description": "client@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Password@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/logout",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": ""
+		},
+		{
+			"key": "TOKEN",
+			"value": ""
+		}
+	]
+}
