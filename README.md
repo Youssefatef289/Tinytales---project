@@ -1,157 +1,312 @@
-# TinyTales Authentication System
+# TinyTales E-Commerce Platform
 
-نظام مصادقة كامل مبني باستخدام Next.js 14 (App Router) مع TypeScript و Tailwind CSS.
+A complete e-commerce platform built with Next.js 14 (App Router), TypeScript, and Tailwind CSS, featuring a full authentication flow and product details page.
 
-## المميزات
+## 🚀 Features
 
-- ✅ تسجيل حساب جديد (Register)
-- ✅ تسجيل الدخول (Login)
-- ✅ تفعيل الحساب (Verify Account)
-- ✅ لوحة تحكم محمية (Protected Dashboard)
-- ✅ حماية الصفحات باستخدام Middleware
-- ✅ التحقق من البيانات باستخدام Zod
-- ✅ إدارة النماذج باستخدام React Hook Form
-- ✅ معالجة الأخطاء وحالات التحميل
-- ✅ تصميم متجاوب (Responsive Design)
+### Authentication System
+- ✅ User Registration (Register)
+- ✅ User Login (Login)
+- ✅ Account Verification (Verify Account)
+- ✅ Protected Dashboard
+- ✅ Route Protection using Middleware
+- ✅ Token-based Authentication
+- ✅ Auto Redirect for Unauthorized Access
 
-## التقنيات المستخدمة
+### Product Features
+- ✅ Product Details Page with Image Gallery
+- ✅ Product Information Display (Price, Colors, Sizes, Types)
+- ✅ Quantity Selector
+- ✅ Add to Cart Functionality
+- ✅ Rating & Reviews Section
+- ✅ Similar Products Carousel
+- ✅ Product Image Navigation
+
+### UI/UX Features
+- ✅ Modern Header with Navigation
+- ✅ Hero Section with Background Images
+- ✅ Breadcrumb Navigation
+- ✅ Responsive Design (Mobile & Desktop)
+- ✅ CSS Modules for Component Styling
+- ✅ Reusable UI Components
+- ✅ Loading States
+- ✅ Error Handling
+- ✅ Form Validation with Zod
+
+## 🛠️ Technologies Used
 
 - **Next.js 14** (App Router)
-- **TypeScript**
-- **Tailwind CSS**
-- **Axios** للاتصال بالـ API
-- **React Hook Form** لإدارة النماذج
-- **Zod** للتحقق من البيانات
-- **ESLint & Prettier** للجودة والتنظيم
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Utility-first CSS framework
+- **Axios** - HTTP client for API calls
+- **React Hook Form** - Form management
+- **Zod** - Schema validation
+- **Next.js Image** - Optimized image handling
+- **CSS Modules** - Scoped component styles
+- **ESLint & Prettier** - Code quality and formatting
 
-## التثبيت
+## 📦 Installation
 
-1. تثبيت الحزم:
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Youssefatef289/Tinytales---project.git
+cd Tinytales---project
+```
+
+2. Install dependencies:
 
 ```bash
 npm install
 ```
 
-2. تشغيل المشروع في وضع التطوير:
+3. Run the development server:
 
 ```bash
 npm run dev
 ```
 
-3. فتح المتصفح على:
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-```
-http://localhost:3000
-```
-
-## البنية
+## 📁 Project Structure
 
 ```
 ├── app/
-│   ├── dashboard/      # صفحة لوحة التحكم (محمية)
-│   ├── login/          # صفحة تسجيل الدخول
-│   ├── register/       # صفحة التسجيل
-│   ├── verify/         # صفحة تفعيل الحساب
-│   ├── layout.tsx      # التخطيط الرئيسي
-│   ├── page.tsx        # الصفحة الرئيسية
-│   └── globals.css     # الأنماط العامة
+│   ├── dashboard/              # Protected Dashboard with Product Details
+│   │   └── page.tsx
+│   ├── login/                  # Login Page
+│   │   └── page.tsx
+│   ├── register/               # Registration Page
+│   │   └── page.tsx
+│   ├── verify/                 # Account Verification Page
+│   │   └── page.tsx
+│   ├── layout.tsx              # Root Layout
+│   ├── page.tsx                # Home Page (redirects to login)
+│   └── globals.css             # Global Styles
 ├── components/
-│   └── ui/             # المكونات المشتركة
-│       ├── Input.tsx
+│   ├── layout/
+│   │   ├── Header.tsx          # Main Header Component
+│   │   └── Header.module.css   # Header Styles
+│   ├── products/
+│   │   ├── ProductCard.tsx     # Product Card Component
+│   │   └── ProductCard.module.css
+│   └── ui/                     # Reusable UI Components
 │       ├── Button.tsx
-│       └── Alert.tsx
+│       ├── Button.module.css
+│       ├── Input.tsx
+│       ├── Input.module.css
+│       ├── Alert.tsx
+│       └── Alert.module.css
 ├── lib/
-│   ├── api/            # طبقة API
-│   │   ├── client.ts   # إعداد Axios
-│   │   └── auth.ts     # دوال المصادقة
-│   ├── types/          # أنواع TypeScript
-│   ├── utils/          # أدوات مساعدة
-│   └── constants.ts    # الثوابت
-├── middleware.ts       # Middleware لحماية الصفحات
+│   ├── api/
+│   │   ├── client.ts           # Axios Configuration
+│   │   └── auth.ts             # Authentication API Functions
+│   ├── constants.ts            # App Constants
+│   ├── hooks/
+│   │   └── useAuth.ts          # Authentication Hook
+│   ├── types/
+│   │   └── auth.ts             # TypeScript Types
+│   └── utils/
+│       └── storage.ts          # LocalStorage Utilities
+├── public/
+│   └── image/                  # Public Images & Icons
+│       ├── header.jpg          # Header Background
+│       ├── footer.jpg          # Footer Background
+│       ├── producat (1-8).png  # Product Images
+│       ├── TT LogoTT Logo 1.svg
+│       └── icons/              # Navigation Icons
+├── middleware.ts               # Route Protection Middleware
+├── next.config.js              # Next.js Configuration
+├── tailwind.config.ts          # Tailwind Configuration
 └── package.json
 ```
 
-## API Endpoints
+## 🔌 API Integration
 
-المشروع متصل بـ API الأساسي:
+The project is connected to the following API:
 
 **Base URL:** `https://tinytales.trendline.marketing/api`
 
-### Endpoints المستخدمة:
+### Available Endpoints:
 
-- `POST /auth/register` - تسجيل حساب جديد
-- `POST /auth/login` - تسجيل الدخول
-- `POST /auth/verify-email` - تفعيل الحساب
-- `GET /auth/user-data` - بيانات المستخدم
-- `POST /auth/logout` - تسجيل الخروج
+- `POST /auth/register` - Register new user
+- `POST /auth/login` - User login
+- `POST /auth/verify-email` - Verify account with code
+- `POST /auth/verify-email/resend-code` - Resend verification code
+- `GET /auth/user-data` - Get user data
+- `POST /auth/logout` - User logout
 
-## تدفق المصادقة
+### API Features:
 
-1. **التسجيل (Register)**
-   - المستخدم يملأ النموذج (الاسم، البريد، الهاتف، كلمة المرور)
-   - يتم التحقق من البيانات على الواجهة
-   - يتم إرسال الطلب إلى API
-   - عند النجاح، يتم حفظ Token وتحويل المستخدم إلى صفحة التفعيل
+- ✅ Centralized API Service Layer
+- ✅ Request/Response Interceptors
+- ✅ Automatic Token Injection
+- ✅ Error Handling
+- ✅ FormData Support for File Uploads
 
-2. **التفعيل (Verify)**
-   - المستخدم يدخل كود التفعيل (123456 للاختبار)
-   - يتم التحقق من الكود
-   - عند النجاح، يتم تحويل المستخدم إلى صفحة تسجيل الدخول
+## 🔐 Authentication Flow
 
-3. **تسجيل الدخول (Login)**
-   - المستخدم يدخل البريد وكلمة المرور
-   - يتم حفظ Token واسم المستخدم في localStorage
-   - يتم تحويل المستخدم إلى Dashboard
+1. **Registration**
+   - User fills registration form (Name, Email, Phone, Password)
+   - Frontend validation using Zod
+   - API call to register endpoint
+   - Token saved to localStorage
+   - Redirect to verification page
 
-4. **لوحة التحكم (Dashboard)**
-   - صفحة محمية تتطلب تسجيل الدخول
-   - تعرض رسالة ترحيب باسم المستخدم
-   - تحتوي على زر تسجيل الخروج
+2. **Verification**
+   - User enters verification code (123456 for testing)
+   - API validates the code
+   - On success, redirect to login page
 
-## الحماية
+3. **Login**
+   - User enters email and password
+   - Token and username saved to localStorage
+   - Redirect to Dashboard
 
-- **Middleware**: يتحقق من الصفحات المحمية
-- **Client-side Protection**: كل صفحة محمية تتحقق من وجود Token
-- **Token Storage**: يتم حفظ Token في localStorage
-- **Auto Redirect**: إعادة التوجيه التلقائي عند عدم وجود Token
+4. **Dashboard**
+   - Protected route requiring authentication
+   - Displays Product Details Page
+   - Shows user information
+   - Logout functionality
 
-## النشر على Vercel
+## 🎨 UI Components
 
-1. ادفع الكود إلى GitHub
-2. اربط المستودع مع Vercel
-3. Vercel سيكتشف Next.js تلقائياً
-4. اضغط Deploy
+### Header Component
+- Logo and Brand Name
+- Navigation Menu with Icons
+- Search Bar (Desktop)
+- Shopping Cart with Badge
+- Notifications with Badge
+- Wishlist Icon
+- Language Selector
+- User Profile Dropdown
+- Mobile Menu
 
-أو باستخدام CLI:
+### Product Details Page
+- Hero Section with Background
+- Breadcrumb Navigation
+- Product Image Gallery with Navigation
+- Product Information (Price, Description, Options)
+- Type & Size Selectors
+- Color Swatches
+- Quantity Selector
+- Add to Cart Button
+- Rating & Reviews Section
+- Similar Products Carousel
+
+### Reusable Components
+- **Button**: Multiple variants (primary, secondary, outline) with loading state
+- **Input**: Form input with label, error handling, and validation
+- **Alert**: Different types (success, error, info, warning)
+- **ProductCard**: Product display card with image, rating, price, and colors
+
+## 🎯 Key Features
+
+### Security
+- **Middleware Protection**: Automatic route protection
+- **Client-side Validation**: Token checking on protected pages
+- **Token Management**: Secure localStorage handling
+- **Auto Redirect**: Unauthorized access redirection
+
+### Performance
+- **Next.js Image Optimization**: Optimized image loading
+- **CSS Modules**: Scoped styles for better performance
+- **Code Splitting**: Automatic by Next.js
+- **Lazy Loading**: Images loaded on demand
+
+### Design
+- **Responsive Layout**: Mobile-first approach
+- **Modern UI**: Clean and professional design
+- **Smooth Animations**: Transitions and hover effects
+- **Accessibility**: Semantic HTML and ARIA labels
+
+## 🚀 Deployment
+
+### Deploy to Vercel
+
+1. Push code to GitHub
+2. Import repository to Vercel
+3. Vercel will auto-detect Next.js
+4. Click Deploy
+
+Or using Vercel CLI:
 
 ```bash
 npm i -g vercel
 vercel
 ```
 
-## ملاحظات
+### Environment Variables
 
-- كود التفعيل للاختبار: `123456`
-- يتم حفظ Token في localStorage
-- جميع الصفحات متجاوبة مع الموبايل والكمبيوتر
+No environment variables required for basic setup. API base URL is configured in `lib/constants.ts`.
 
-## التطوير
+## 📝 Development
 
 ```bash
-# التطوير
+# Development server
 npm run dev
 
-# البناء
+# Production build
 npm run build
 
-# التشغيل
+# Start production server
 npm start
 
-# فحص الكود
+# Lint code
 npm run lint
+
+# Format code (Prettier)
+npm run format  # if configured
 ```
 
-## الترخيص
+## 📋 Notes
 
-هذا المشروع مخصص للاستخدام في مهمة TinyTales.
+- **Verification Code**: `123456` (for testing)
+- **Token Storage**: localStorage
+- **Direction**: LTR (Left to Right)
+- **Language**: English (UI text)
+- **Images**: All images stored in `/public/image/`
 
+## 🎨 Styling
+
+The project uses:
+- **Tailwind CSS** for utility classes
+- **CSS Modules** for component-specific styles
+- **Global CSS** for app-wide styles
+
+Each component has its own CSS Module file:
+- `Header.module.css`
+- `Button.module.css`
+- `Input.module.css`
+- `Alert.module.css`
+- `ProductCard.module.css`
+
+## 📸 Images & Assets
+
+All images and icons are located in:
+- `/public/image/` - Public assets
+- `/image/` - Source images (also copied to public)
+
+### Available Assets:
+- Header background: `header.jpg`
+- Footer background: `footer.jpg`
+- Product images: `producat (1-8).png`
+- Logo: `TT LogoTT Logo 1.svg`
+- Navigation icons: `/icons/` folder
+
+## 🔗 Links
+
+- **GitHub Repository**: [https://github.com/Youssefatef289/Tinytales---project.git](https://github.com/Youssefatef289/Tinytales---project.git)
+- **API Base URL**: `https://tinytales.trendline.marketing/api`
+
+## 📄 License
+
+This project is created for TinyTales assignment.
+
+## 👨‍💻 Author
+
+Youssef Atef
+
+---
+
+**Built with ❤️ using Next.js, TypeScript, and Tailwind CSS**
