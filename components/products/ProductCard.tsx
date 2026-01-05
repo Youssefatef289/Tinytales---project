@@ -44,10 +44,11 @@ export default function ProductCard({
           </div>
         )}
         <div className="aspect-square relative overflow-hidden bg-gray-100">
-          <img
+          <Image
             src={image}
             alt={name}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            fill
+            className="object-cover group-hover:scale-110 transition-transform duration-300"
           />
         </div>
       </div>
